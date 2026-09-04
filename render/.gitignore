@@ -1,0 +1,7 @@
+# Generated artifacts - rebuild with: python3 -c "import scenes; ..."
+stills/
+out_img/
+clips/
+*.zip
+*.mp4
+*.webm
