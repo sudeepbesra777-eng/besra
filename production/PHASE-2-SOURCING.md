@@ -1,5 +1,27 @@
 # PHASE 2 — Visual Sourcing Plan (all 30 shots)
 
+> ## CORRECTION — 2026-09-04, read before using any AI tool
+>
+> This document originally pointed at **Kling / Hailuo free tiers** for the AI shots.
+> **That was wrong for a monetised channel.** Checked against current reporting:
+>
+> - **Kling's free tier prohibits commercial use**, watermarks output, and caps at 360p-540p.
+>   Commercial rights only come with paid plans.
+> - **Most free AI video tiers in 2026 prohibit commercial use and watermark output.** The few
+>   that reportedly permit it cap resolution well below 1080p.
+> - **Monetising a YouTube video is commercial use.** YouTube will not stop you, but you would
+>   be breaking the generator's terms.
+>
+> **Revised approach: avoid AI video entirely where possible.** Free stock under a
+> commercial-friendly licence, plus shapes built in Fusion, produces this documentary's
+> deliberately stylised look without any licensing exposure, watermark, daily cap, or
+> resolution ceiling.
+>
+> The per-shot "AI" recommendations below should now be read as **"stock + Fusion first;
+> AI only if you find a tool whose own terms page you have personally verified permits
+> commercial use."** Verify on the tool's own terms page, never on a blog roundup.
+
+
 **Sourcing priority, applied to every shot in order:**
 1. Public domain (NASA / NOAA / USGS / NSF)
 2. Free stock (Pexels, Pixabay, Videvo, Coverr)
