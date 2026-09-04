@@ -1,0 +1,20 @@
+BLOCK PLACEMENT TIMECODES  (timeline start set to 00:00:00:00, 30 fps)
+Type the timecode, then Overwrite (F10) the matching clip onto A1.
+
+block01.mp3  ->  00:00:00:00        block02.mp3  ->  00:00:10:00
+block03.mp3  ->  00:00:20:00        block04.mp3  ->  00:00:30:00
+block05.mp3  ->  00:00:40:00        block06.mp3  ->  00:00:50:00
+block07.mp3  ->  00:01:00:00        block08.mp3  ->  00:01:10:00
+block09.mp3  ->  00:01:20:00        block10.mp3  ->  00:01:30:00
+block11.mp3  ->  00:01:40:00        block12.mp3  ->  00:01:50:00
+block13.mp3  ->  00:02:00:00        block14.mp3  ->  00:02:10:00
+block15.mp3  ->  00:02:20:00        block16.mp3  ->  00:02:30:00
+block17.mp3  ->  00:02:40:00        block18.mp3  ->  00:02:50:00
+block19.mp3  ->  00:03:00:00        block20.mp3  ->  00:03:10:00
+block21.mp3  ->  00:03:20:00        block22.mp3  ->  00:03:30:00
+block23.mp3  ->  00:03:40:00        block24.mp3  ->  00:03:50:00
+block25.mp3  ->  00:04:00:00        block26.mp3  ->  00:04:10:00
+block27.mp3  ->  00:04:20:00        block28.mp3  ->  00:04:30:00
+block29.mp3  ->  00:04:40:00        block30.mp3  ->  00:04:50:00
+
+Total timeline length: 00:05:00:00
