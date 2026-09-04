@@ -3,8 +3,39 @@
 **Purpose:** prove the visual system on the three hardest registers before committing to 30 blocks.
 **Pipeline:** Claude (research/script/storyboard/direction/prompts) → Seedance 2.5 (clips only) →
 CapCut/DaVinci (VO, music, subtitles, labels, assembly).
-**Global settings:** `model: seedance_2_5` · `1080p` · `16:9` · `10s` · **`generate_audio: false`**
-**Cost:** 90 credits/shot → **270 credits for the test.**
+**Global settings:** `model: seedance_2_5` · `16:9` · **`generate_audio: false`**
+
+## Test tier (REVISED — cost-optimised)
+Run the test at **480p**. Production stays 1080p.
+
+| Shot | Res | Dur | Credits | Why this length |
+|---|---|---|---|---|
+| A establishing | 480p | 4s | 10 | Simple slow push-in; palette is judged in the first second |
+| B hero reveal | 480p | **10s** | 25 | The one shot where temporal stability must be proven at full block length |
+| C diagram | 480p | 4s | 10 | Static geometry, locked truck; legibility is judged instantly |
+| | | | **45 total** | |
+
+**Absolute floor** if you want it cheaper: all three at 4s = **30 credits**. The extra 15 credits on
+Shot B buy the single most valuable piece of information in the test — see "Why B stays at 10s".
+
+### Measured price curve (get_cost, audio off, 16:9)
+Cost is **purely per second of output** — shot length is not a lever, only resolution is.
+
+| Res | Credits/sec | 4s | 10s | **Full 5:00 (300s)** |
+|---|---|---|---|---|
+| 480p | 2.5 | 10 | 25 | 750 |
+| 720p | 6.5 | 26 | 65 | 1,950 |
+| 1080p | 9.0 | 36 | 90 | 2,700 |
+
+Splitting a 10s block into two 5s shots costs exactly the same as one 10s shot. Cut as often as
+the edit wants — more cuts are free, and better for retention.
+
+### Why B stays at 10s
+Camera drift, geometry morphing and detail decay all **grow with duration**. A prompt that looks
+perfect at 4s can fall apart at second 7. Shots A and C are slow single-axis moves over simple
+subjects and will behave. Shot B is the hero: complex carved geometry, one hard moving light, a
+crane-and-tilt. If it holds for 10s it holds anywhere, and that is the finding that de-risks the
+other 27 blocks. Testing it at 4s would leave the project's biggest unknown untested.
 
 ---
 
@@ -129,15 +160,17 @@ and steadily from left to right, parallel to the cross-section, without rotating
 ## Exact call sequence
 
 ```
-STEP 1 — alone, t2v:
+STEP 1 — alone, t2v  (10 credits):
 generate_video { model:"seedance_2_5", mode:"t2v", prompt:"<SHOT A + STYLE LOCK>",
-                 resolution:"1080p", aspect_ratio:"16:9", duration:10, generate_audio:false }
+                 resolution:"480p", aspect_ratio:"16:9", duration:4, generate_audio:false }
 
-STEP 2 — pull a clean frame from Shot A, then B and C in parallel via generate_video_batch:
-  each { model:"seedance_2_5", mode:"omni_reference", resolution:"1080p",
-         aspect_ratio:"16:9", duration:10, generate_audio:false,
-         medias:[{ role:"image_references", value:"<shot A frame media_id>" }] }
+STEP 2 — pull a clean frame from Shot A, then B and C via generate_video_batch (35 credits):
+  B { model:"seedance_2_5", mode:"omni_reference", resolution:"480p", aspect_ratio:"16:9",
+      duration:10, generate_audio:false,
+      medias:[{ role:"image_references", value:"<shot A frame media_id>" }] }
+  C { ...same, duration:4 }
 ```
+`omni_reference` at 480p/4s prices at 10 credits — **identical to t2v**. Reference chaining is free.
 
 ## What to judge on delivery
 1. **A → B → C palette drift.** Same world, or three different videos? This is the whole test.
